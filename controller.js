@@ -6,10 +6,12 @@ import TooltipView from './views/TooltipView/TooltipView.js';
 import ModalView from './views/ModalView/ModalView.js';
 
 // Main views in the app
-import LineChartView from './views/LineChartView/LineChartView.js';
+import D3TestView from './views/D3TestView/D3TestView.js';
+import RedashTestView from './views/RedashTestView/RedashTestView.js';
 
 const viewClassLookup = {
-  LineChartView
+  D3TestView,
+  RedashTestView
 };
 
 class Controller extends Model {
@@ -43,7 +45,12 @@ class Controller extends Model {
         isCloseable: false,
         content: [{
           type: 'component',
-          componentName: 'LineChartView',
+          componentName: 'D3TestView',
+          componentState: {}
+        },
+        {
+          type: 'component',
+          componentName: 'RedashTestView',
           componentState: {}
         }]
       }]
