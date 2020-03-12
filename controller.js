@@ -8,10 +8,12 @@ import ModalView from './views/ModalView/ModalView.js';
 // Main views in the app
 import D3TestView from './views/D3TestView/D3TestView.js';
 import RedashTestView from './views/RedashTestView/RedashTestView.js';
+import HorizonPlotView from './views/HorizonPlotView/HorizonPlotView.js';
 
 const viewClassLookup = {
   D3TestView,
-  RedashTestView
+  RedashTestView,
+  HorizonPlotView
 };
 
 class Controller extends Model {
@@ -49,9 +51,19 @@ class Controller extends Model {
           componentState: {}
         },
         {
-          type: 'component',
-          componentName: 'RedashTestView',
-          componentState: {}
+          type: 'column',
+          content: [
+            {
+              type: 'component',
+              componentName: 'RedashTestView',
+              componentState: {}
+            },
+            {
+              type: 'component',
+              componentName: 'HorizonPlotView',
+              componentState: {}
+            }
+          ]
         }]
       }]
     }, d3.select('#layoutRoot').node());
